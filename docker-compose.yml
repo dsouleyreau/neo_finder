@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres
+    volumes:
+      - database:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${SQL_DATABASE}
+      - POSTGRES_USER=${SQL_USER}
+      - POSTGRES_PASSWORD=${SQL_PASSWORD}
+    networks:
+      - database
+  backend:
+    build: ./backend
+    # command: python3 manage.py runserver 0.0.0.0:8000
+    ## Use gunicorn to improve api performance
+    command: gunicorn api.wsgi:application --bind 0.0.0.0:8000
+    ## Run the container without server (debug)
+    # tty: true
+    env_file:
+      - .env
+    volumes:
+      - ./backend:/backend
+    environment:
+      - POSTGRES_NAME=${SQL_DATABASE}
+      - POSTGRES_USER=${SQL_USER}
+      - POSTGRES_PASSWORD=${SQL_PASSWORD}
+    depends_on:
+      - db
+
+volumes:
+  database:

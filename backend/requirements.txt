@@ -1,0 +1,11 @@
+#  "light on server resources" https://gunicorn.org/
+# see also https://vsupalov.com/gunicorn-and-nginx/
+gunicorn
+
+# loading .env file
+python-dotenv
+
+# efficient PostgreSQL wrapper
+psycopg2
+
+django
