@@ -1,0 +1,18 @@
+.rdrNoSelection .rdrSelected,
+.rdrNoSelection .rdrInRange,
+.rdrNoSelection .rdrStartEdge,
+.rdrNoSelection .rdrEndEdge {
+  background: #fff;
+}
+.rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span,
+.rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span,
+.rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span,
+.rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span {
+  color: black;
+}
+.rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span:after,
+.rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
+.rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
+.rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after {
+  background: #3d91ff;
+}
