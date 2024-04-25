@@ -26,6 +26,50 @@ services:
       - POSTGRES_PASSWORD=${SQL_PASSWORD}
     depends_on:
       - db
+    networks:
+      - database
+      - backend
+  frontend:
+    build: ./frontend
+    env_file:
+      - .env
+    volumes:
+      - ./frontend:/frontend
+      ## Keep node_modules from build
+      - /frontend/node_modules
+      ## Mount node_modules from frontend container (built with Dockerfile) to host
+      ## in order to have autocompletion in IDE
+      ## Uncomment the following lines and the node_modules volume at the of this file to use get this feature
+      # - node_modules:/frontend/node_modules
+    networks:
+      - frontend
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./web/default.conf:/etc/nginx/templates/default.conf.template
+    environment:
+      API_BASE_URL: "${API_BASE_URL}"
+    ports:
+      - "${SERVER_PORT}:80"
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - frontend
+      - backend
+
+networks:
+  database:
+  frontend:
+  backend:
 
 volumes:
   database:
+
+  ## https://stackoverflow.com/a/67010277
+  # node_modules:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     o: bind
+  #     device: ./frontend/node_modules

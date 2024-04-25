@@ -46,3 +46,7 @@ Setting up Django with Docker:
 - https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/django/
 - https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/
 - https://parthkoshta.medium.com/dockerize-your-react-django-rest-api-application-and-serve-using-nginx-6f9ccf17105b
+
+Using React with Django:
+
+- https://github.com/dori-dev/django-todo-react

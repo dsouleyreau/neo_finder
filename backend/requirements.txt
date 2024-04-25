@@ -8,4 +8,8 @@ python-dotenv
 # efficient PostgreSQL wrapper
 psycopg2
 
+# Needed to run Django as an API
 django
+djangorestframework
+django-cors-headers
+requests

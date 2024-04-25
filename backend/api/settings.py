@@ -85,3 +85,17 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Setup API to communicate with React
+
+INSTALLED_APPS.extend(('rest_framework', 'corsheaders', 'api'))
+
+MIDDLEWARE.append('corsheaders.middleware.CorsMiddleware')
+
+if DEBUG:
+    CORS_ORIGIN_ALLOW_ALL = True
+else:
+    DJANGO_ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS')
+    WHITELIST = DJANGO_ALLOWED_HOSTS.split(' ') if DJANGO_ALLOWED_HOSTS else ['backend']
+
+    CORS_ORIGIN_WHITELIST = [f'http://{HOST}:8000' for HOST in WHITELIST]
