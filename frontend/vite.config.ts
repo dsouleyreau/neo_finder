@@ -9,6 +9,10 @@ export default defineConfig({
     // Expose to docker network (i.e. to nginx proxy)
     host: true,
   },
+  esbuild: {
+    // Remove console.log and debugger statements from build
+    drop: ["console", "debugger"],
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
