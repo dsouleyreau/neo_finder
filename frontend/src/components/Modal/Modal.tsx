@@ -9,6 +9,8 @@ interface ModalProperties {
   className?: string;
 }
 
+// made with: https://dev.to/ayushdev_24/building-a-modal-using-reactjs-and-tailwindcss-38d0
+
 const Modal: React.FC<ModalProperties> = ({ btnText, title, children, close: close = false, submit = false }) => {
   const [showModal, setShowModal] = useState(false);
   return (

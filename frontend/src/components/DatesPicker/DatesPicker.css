@@ -1,3 +1,5 @@
+/* fix empty selection: https://github.com/hypeserver/react-date-range/issues/360#issuecomment-724560224 */
+
 .rdrNoSelection .rdrSelected,
 .rdrNoSelection .rdrInRange,
 .rdrNoSelection .rdrStartEdge,

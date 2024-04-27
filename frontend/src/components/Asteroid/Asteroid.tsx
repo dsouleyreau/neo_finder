@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import { formatNumber } from "@/utils/format";
-import { Approach } from "../Dashboard/Dashboard";
 import Icon from "@/assets/asteroid.svg?react";
-import Modal from "@/Modal/Modal";
+import Modal from "@/components/Modal/Modal";
+import { type ApproachType } from "../Approach/Approach";
 
 export interface AsteroidType {
   name: string;
@@ -15,7 +15,7 @@ export interface AsteroidType {
    */
   distance: number;
   danger: boolean;
-  approaches: Approach[];
+  approaches: ApproachType[];
 }
 
 const Asteroid = (asteroid: AsteroidType) => {
