@@ -86,6 +86,9 @@ const Asteroid = forwardRef<MeshRef, AsteroidProperties>(({ asteroid }, referenc
           const distance = toolTip.querySelector(".distance .content")!;
           distance.innerHTML = `${formatNumber(asteroid.distance / 384_400)} lunar distance`;
 
+          const dangerous = toolTip.querySelector(".dangerous .content")!;
+          dangerous.innerHTML = asteroid.danger ? "Yes" : "No";
+
           const approach = toolTip.querySelector(".approach .content")!;
           approach.innerHTML = new Date(asteroid.approaches[0].date).toLocaleDateString();
 

@@ -59,6 +59,11 @@ const Asteroid = (asteroid: AsteroidType) => {
       <div className="grow flex justify-center items-end">
         <Modal btnText="More information" title={asteroid.name}>
           <div className="flex flex-col gap-2 text-left">
+            <div>
+              <b>Is considered dangerous for earth:</b>
+              &nbsp;
+              <span>{asteroid.danger ? "Yes" : "No"}</span>
+            </div>
             <b>Last five approaches:</b>
             <ul className="list-none">
               {asteroid.approaches.slice(0, 5).map((approach) => (

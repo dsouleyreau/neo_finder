@@ -132,6 +132,10 @@ const View3D: React.FC<View3DProperties> = (properties) => {
             <span className="text-orange-400">Passing close to earth by:</span>&nbsp;
             <span className="content"></span>
           </div>
+          <div className="dangerous">
+            <span className="text-orange-400">Threat for earth:</span>&nbsp;
+            <span className="content"></span>
+          </div>
           <div className="approach">
             <span className="text-orange-400">Most recent approach:</span>&nbsp;
             <span className="content"></span>
