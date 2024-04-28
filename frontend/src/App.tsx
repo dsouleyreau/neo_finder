@@ -5,6 +5,7 @@ import Approach, { type ApproachType } from "./components/Approach/Approach";
 import { formatDate } from "@/utils/format";
 import DatesPicker from "./components/DatesPicker/DatesPicker";
 import { type Range } from "react-date-range";
+import View3D from "./components/View3D/View3D";
 
 type ApiResponse = ApproachType[];
 
@@ -38,10 +39,11 @@ const App = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-8">
-      <h1>Asteroids</h1>
+    <div className="flex flex-col gap-8 p-8 max-sm:p-3">
+      <h1>Near Earth objects: Asteroids</h1>
       <h2>Select any date range (7 days max) to traverse space and discover asteroids near Earth.</h2>
       <DatesPicker onRangeChange={onDatesChange} />
+      <View3D approaches={approaches} />
       {approaches.map((approach) => (
         <Approach key={approach.date} {...approach} />
       ))}

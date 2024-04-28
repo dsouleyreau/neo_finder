@@ -50,3 +50,5 @@ Setting up Django with Docker:
 Using React with Django:
 
 - https://github.com/dori-dev/django-todo-react
+
+3D view based on an [similar project with Three.js](https://github.com/uncultivatedrabbit/Asteroid-Finder-API-Hack) but reworked using [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
