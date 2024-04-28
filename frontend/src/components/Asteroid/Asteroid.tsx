@@ -51,7 +51,7 @@ const Asteroid = (asteroid: AsteroidType) => {
           <span>{formatNumber(asteroid.size * 1_000)}</span>
         </div>
         <div>
-          <b>Passing by:</b>
+          <b>Passing close to earth by:</b>
           &nbsp;
           <span>{formatNumber(asteroid.distance / 384_400)} lunar distance</span>
         </div>
