@@ -25,11 +25,14 @@ const Modal: React.FC<ModalProperties> = ({ btnText, title, children, close: clo
       </button>
       {showModal ? (
         <>
-          <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50">
+          <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 bg-gray-600 bg-opacity-50">
             <div className="w-auto m-6 max-w-3xl rounded-lg shadow-lg flex flex-col bg-white text-black">
               <div className="flex items-center justify-between gap-8 py-2 px-4 border-b border-solid border-gray-300">
                 <div className="text-2xl font-semibold">{title}</div>
-                <button className="bg-transparent border-0 p-0 rotate-45 text-3xl" onClick={() => setShowModal(false)}>
+                <button
+                  className="bg-transparent border-0 p-0 rotate-45 text-3xl focus:outline-none"
+                  onClick={() => setShowModal(false)}
+                >
                   +
                 </button>
               </div>

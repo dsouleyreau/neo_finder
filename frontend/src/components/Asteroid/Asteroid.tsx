@@ -57,14 +57,17 @@ const Asteroid = (asteroid: AsteroidType) => {
         </div>
       </div>
       <div className="grow flex justify-center items-end">
-        <Modal btnText="Last five approaches" title="Last five approaches">
-          <ul className="list-none">
-            {asteroid.approaches.slice(0, 5).map((approach) => (
-              <li key={approach.date}>
-                {new Date(approach.date).toLocaleDateString()} - {formatNumber(approach.distance)} km
-              </li>
-            ))}
-          </ul>
+        <Modal btnText="More information" title={asteroid.name}>
+          <div className="flex flex-col gap-2 text-left">
+            <b>Last five approaches:</b>
+            <ul className="list-none">
+              {asteroid.approaches.slice(0, 5).map((approach) => (
+                <li key={approach.date}>
+                  {new Date(approach.date).toLocaleDateString()} - {formatNumber(approach.distance)} km
+                </li>
+              ))}
+            </ul>
+          </div>
         </Modal>
       </div>
     </div>
