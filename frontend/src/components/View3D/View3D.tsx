@@ -112,6 +112,35 @@ const View3D: React.FC<View3DProperties> = (properties) => {
     <>
       <div>
         Hold and move (or zoom) on following 3d view to watch the minimum distance each asteroid passes by Earth.
+        <br />
+        Hover and click on asteroids to see more information
+      </div>
+      <div
+        id="asteroidTooltip"
+        className="fixed z-10 bg-black bg-opacity-80 p-2 rounded-lg flex flex-col gap-2 text-left hidden"
+      >
+        <div className="name">
+          <span className="text-orange-400">Name:</span>&nbsp;
+          <span className="content"></span>
+        </div>
+        <div className="more flex flex-col gap-2 hidden">
+          <div className="size">
+            <span className="text-orange-400">Size:</span>&nbsp;
+            <span className="content"></span>
+          </div>
+          <div className="distance">
+            <span className="text-orange-400">Passing close to earth by:</span>&nbsp;
+            <span className="content"></span>
+          </div>
+          <div className="approach">
+            <span className="text-orange-400">Most recent approach:</span>&nbsp;
+            <span className="content"></span>
+          </div>
+          <div className="approaches">
+            <div className="text-orange-400 text-center">Last 5 approaches</div>
+            <span className="content"></span>
+          </div>
+        </div>
       </div>
       <Canvas
         camera={{ fov: 45, aspect: aspectRatio, near: 1, far: 1000, position: [0, 0, DEFAULT_DISTANCE] }}
