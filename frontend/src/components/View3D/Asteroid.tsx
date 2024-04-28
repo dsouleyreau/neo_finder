@@ -76,11 +76,18 @@ const Asteroid = forwardRef<MeshRef, AsteroidProperties>(({ asteroid }, referenc
       }}
       onPointerDown={(event) => {
         displayToolTip(event, (toolTip) => {
+          // onPointerMove is not called on touch screen devices
+          const name = toolTip.querySelector(".name .content")!;
+          name.innerHTML = asteroid.name;
+
           const size = toolTip.querySelector(".size .content")!;
           size.innerHTML = `${formatNumber(asteroid.size * 1000)}m`;
 
           const distance = toolTip.querySelector(".distance .content")!;
           distance.innerHTML = `${formatNumber(asteroid.distance / 384_400)} lunar distance`;
+
+          const dangerous = toolTip.querySelector(".dangerous .content")!;
+          dangerous.innerHTML = asteroid.danger ? "Yes" : "No";
 
           const approach = toolTip.querySelector(".approach .content")!;
           approach.innerHTML = new Date(asteroid.approaches[0].date).toLocaleDateString();

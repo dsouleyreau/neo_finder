@@ -42,10 +42,10 @@ const DatesPicker: React.FC<DatesPickerProperties> = ({ onRangeChange }) => {
         minDate={minDate}
         maxDate={maxDate}
         onChange={({ selection }) => setRange(selection)}
-        className={"w-96 " + (rdrNoSelection ? "rdrNoSelection" : "")}
+        className={"max-w-[96] -mx-5 " + (rdrNoSelection ? "rdrNoSelection" : "")}
       />
       <span
-        className="absolute bottom-1/2 right-0 py-1 px-2 text-3xl cursor-pointer text-black"
+        className="absolute -bottom-2 left-1/2 -translate-x-1/2 py-1 px-2 text-3xl cursor-pointer text-black"
         role="button"
         onClick={() => setRange({ startDate: undefined, endDate: undefined, key: "selection" })}
       >

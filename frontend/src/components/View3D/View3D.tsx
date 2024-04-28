@@ -117,7 +117,7 @@ const View3D: React.FC<View3DProperties> = (properties) => {
       </div>
       <div
         id="asteroidTooltip"
-        className="fixed z-10 bg-black bg-opacity-80 p-2 rounded-lg flex flex-col gap-2 text-left hidden"
+        className="fixed z-10 text-white bg-black bg-opacity-80 p-2 rounded-lg flex flex-col gap-2 text-left hidden"
       >
         <div className="name">
           <span className="text-orange-400">Name:</span>&nbsp;
@@ -130,6 +130,10 @@ const View3D: React.FC<View3DProperties> = (properties) => {
           </div>
           <div className="distance">
             <span className="text-orange-400">Passing close to earth by:</span>&nbsp;
+            <span className="content"></span>
+          </div>
+          <div className="dangerous">
+            <span className="text-orange-400">Threat for earth:</span>&nbsp;
             <span className="content"></span>
           </div>
           <div className="approach">
