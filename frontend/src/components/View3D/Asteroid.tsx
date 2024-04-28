@@ -76,6 +76,10 @@ const Asteroid = forwardRef<MeshRef, AsteroidProperties>(({ asteroid }, referenc
       }}
       onPointerDown={(event) => {
         displayToolTip(event, (toolTip) => {
+          // onPointerMove is not called on touch screen devices
+          const name = toolTip.querySelector(".name .content")!;
+          name.innerHTML = asteroid.name;
+
           const size = toolTip.querySelector(".size .content")!;
           size.innerHTML = `${formatNumber(asteroid.size * 1000)}m`;
 

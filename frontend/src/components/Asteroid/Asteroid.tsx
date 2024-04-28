@@ -38,7 +38,7 @@ const Asteroid = (asteroid: AsteroidType) => {
   }, []);
 
   return (
-    <div className="rounded-xl px-4 py-6 flex flex-col gap-4 pointer even:bg-gray-700 odd:bg-gray-800 w-72">
+    <div className="rounded-xl px-4 py-6 flex flex-col gap-4 pointer even:bg-gray-700 odd:bg-gray-800 w-full text-white">
       <div className="flex items-center">
         <div className="flex justify-center items-center w-20 h-20">
           <Icon className="w-auto inline-block" style={{ height: `${normalizedSize}px`, fill: color }} />

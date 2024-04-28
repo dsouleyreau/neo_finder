@@ -39,8 +39,8 @@ const App = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-8">
-      <h1>Asteroids</h1>
+    <div className="flex flex-col gap-8 p-8 max-sm:p-3">
+      <h1>Near Earth objects: Asteroids</h1>
       <h2>Select any date range (7 days max) to traverse space and discover asteroids near Earth.</h2>
       <DatesPicker onRangeChange={onDatesChange} />
       <View3D approaches={approaches} />
